@@ -11,7 +11,9 @@ export type Migrations = {
 // A Migration is a function that takes the previous state, and mutates it,
 // so it conforms to a new schema version.
 // Alternatively, the Migration may return a new State object to replace the previous one.
-type Migration = (previousState: VersionedState) => any | void
+export type Migration = (
+  previousState: VersionedState & Record<string, any>
+) => any | void
 
 // A state object from a previous version of the app.
 // We know nothing about the state, except that is has a schema version.
