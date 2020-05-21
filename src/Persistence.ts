@@ -32,7 +32,7 @@ export function createPersistence<T extends VersionedState>({
       },
     })
 
-    return restoredState as T
+    return (restoredState as T) ?? initialState
   }
 
   return { middleware, restorePersistedState }
