@@ -1,0 +1,41 @@
+{
+  "name": "@bearbytes/zeno-persist",
+  "version": "1.1.1",
+  "description": "Persist and restore versioned JSON state objects.",
+  "keywords": [
+    "typescript",
+    "redux",
+    "persistence",
+    "persist",
+    "storage"
+  ],
+  "author": "pancomputationalist@mailbox.org",
+  "license": "ISC",
+  "homepage": "https://github.com/bearbytes/zeno-persist",
+  "repository": "https://github.com/bearbytes/zeno-persist.git",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org",
+    "access": "public"
+  },
+  "dependencies": {
+    "@bearbytes/zeno": "^1.1.0",
+    "immer": "^6.0.6"
+  },
+  "devDependencies": {
+    "@types/jest": "^25.1.4",
+    "jest": "^25.1.0",
+    "np": "^6.2.0",
+    "ts-jest": "^25.2.1",
+    "typescript": "^3.8.3"
+  },
+  "scripts": {
+    "prepare": "rm -rf dist && tsc",
+    "test": "jest",
+    "release": "np --no-yarn"
+  }
+}
