@@ -21,8 +21,8 @@ export function createPersistence<T extends VersionedState>({
       storageAdapter.set(`zeno-persist/v/${state.schemaVersion}`, state)
     },
   })
-  async function restoreState() {
-    await loadAndMigrateState({
+  async function restorePersistedState() {
+    const restoredState = await loadAndMigrateState({
       targetSchemaVersion: initialState.schemaVersion,
       migrations,
       loadVersionedState(schemaVersion) {
@@ -31,9 +31,11 @@ export function createPersistence<T extends VersionedState>({
         )
       },
     })
+
+    return restoredState as T
   }
 
-  return { middleware, restoreState }
+  return { middleware, restorePersistedState }
 }
 
 function validate({
