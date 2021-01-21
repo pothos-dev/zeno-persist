@@ -24,7 +24,7 @@
   },
   "dependencies": {
     "@bearbytes/zeno": "^1.1.0",
-    "immer": "^6.0.6"
+    "immer": "^8.0.1"
   },
   "devDependencies": {
     "@types/jest": "^25.1.4",
